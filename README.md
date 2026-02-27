@@ -30,6 +30,7 @@ By default, the code expects the dataset under (WSL/Linux example used by the au
 BASE_DIR = Path("/home/nadine/datasets/Fivedatasets")
 ```
 Expected dataset subfolders:
+```text
 Fivedatasets/
   firstscan/
   filtered/
@@ -54,10 +55,14 @@ You can override checkpoint and log locations using environment variables:
 CHECKPOINT_DIR (where checkpoints are saved)
 LOG_DIR (where logs are written; defaults to runs/ under the project)
 
+```markdown
 Example:
 
+```bash
 export CHECKPOINT_DIR=/home/<user>/spff_runs/checkpoints
 export LOG_DIR=/home/<user>/spff_runs/logs
+```
+
 ### Models / Variants
 All model variants are registered in innovative3D/config.py under VARIANTS.
 
