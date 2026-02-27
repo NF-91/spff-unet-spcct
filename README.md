@@ -57,12 +57,11 @@ You can override checkpoint and log locations using environment variables:
 CHECKPOINT_DIR (where checkpoints are saved)
 LOG_DIR (where logs are written; defaults to runs/ under the project)
 
-```markdown
 Example:
 
 ```bash
 export CHECKPOINT_DIR=/home/<user>/spff_runs/checkpoints
-export LOG_DIR=/home/<user>/spff_runs/logs
+export LOG_DIR=/home/<user>/spff_runs/logs 
 ```
 
 ### Models / Variants
