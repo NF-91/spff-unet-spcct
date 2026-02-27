@@ -17,6 +17,7 @@ lightning_logs/
 wandb/
 outputs/
 checkpoints/
+analysis_plots/
 
 # Model files / arrays
 *.ckpt
@@ -25,5 +26,30 @@ checkpoints/
 *.npz
 *.npy
 
+# Large CT/DICOM-style data (prevent accidental upload)
+*.dcm
+*.dicom
+*.nii
+*.nii.gz
+*.mha
+*.mhd
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.7z
+
+# LaTeX build artifacts (if you ever put paper files here)
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+
 # Windows metadata files
 *:Zone.Identifier
+*Zone.Identifier
