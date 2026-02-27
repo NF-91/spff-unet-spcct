@@ -109,11 +109,12 @@ Tip: You can generate requirements.txt from your working environment using:
 pip freeze > requirements.txt
 ```
 
-```code 
-### Running training and evaluation
-### 1) Select a model variant
 
-Your config supports selecting a variant via environment variable:
+```markdown
+## Running training and evaluation
+
+### 1) Select a model variant
+```bash
 export INNOVATIVE3D_VARIANT="SPFF-UNet"
 ```
 
