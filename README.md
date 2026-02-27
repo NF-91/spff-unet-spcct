@@ -29,6 +29,7 @@ By default, the code expects the dataset under (WSL/Linux example used by the au
 ```python
 BASE_DIR = Path("/home/nadine/datasets/Fivedatasets")
 ```
+
 Expected dataset subfolders:
 ```text
 Fivedatasets/
@@ -37,6 +38,7 @@ Fivedatasets/
   filtered2/
   filtered3/
   filtered4/
+```
 
 ### 2) Train/test split (scan-level)
 
