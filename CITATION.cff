@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: "SPFF-UNet (SPCCT)"
+message: "If you use this software, please cite the associated manuscript and the dataset DOI: 10.21227/gbhn-nk95."
+type: software
+authors:
+  - family-names: "Francis"
+    given-names: "Nadine"
+repository-code: "https://github.com/NF-91/spff-unet-spcct"
+license: MIT
