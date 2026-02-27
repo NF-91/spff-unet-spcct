@@ -110,7 +110,6 @@ pip freeze > requirements.txt
 ```
 
 
-```markdown
 ## Running training and evaluation
 
 ### 1) Select a model variant
