@@ -1,6 +1,11 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18797577.svg)](https://doi.org/10.5281/zenodo.18797577)
 # SPFF-UNet (SPCCT)
 
 This repository provides training and evaluation code for **SPFF-UNet** and several baseline 3D segmentation models used for **voxel-wise multi-material classification** in **five-bin Spectral Photon-Counting CT (SPCCT)** phantom data (hydroxyapatite and iodine concentration classes, soft-tissue surrogates, and water).
+
+## Code archive (Zenodo)
+- **Version (v1.0.0):** https://doi.org/10.5281/zenodo.18797577  
+- **All versions (concept DOI):** https://doi.org/10.5281/zenodo.18797576
 
 ## Dataset
 The SPCCT phantom dataset used in this project is publicly available via IEEE DataPort:
