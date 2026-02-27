@@ -37,16 +37,19 @@ Fivedatasets/
   filtered3/
   filtered4/
 
-2) Train/test split (scan-level)
+### 2) Train/test split (scan-level)
 
 The default split is scan-level (to avoid leakage across correlated slices):
+```python
 TRAIN_INDICES = [0, 1, 2, 4]
 TEST_INDICES  = [3]
+```
 
-3) Checkpoints and logs
+### 3) Checkpoints and logs
 The default checkpoint root is:
+```python
 _PRIMARY_CKPT_DIR = BASE_DIR / "final checkpoints" / "trial"
-
+```
 You can override checkpoint and log locations using environment variables:
 CHECKPOINT_DIR (where checkpoints are saved)
 LOG_DIR (where logs are written; defaults to runs/ under the project)
@@ -55,45 +58,36 @@ Example:
 
 export CHECKPOINT_DIR=/home/<user>/spff_runs/checkpoints
 export LOG_DIR=/home/<user>/spff_runs/logs
-Models / Variants
-
+### Models / Variants
 All model variants are registered in innovative3D/config.py under VARIANTS.
 
-Baselines
-
+### Baselines
 3DUNet
-
 UNETR
-
 R2UNet3D
-
 SwinUNETR
-
 ResUNet++
 
-Proposed model
-
+### Proposed model
 SPFF-UNet
 
-Ablations / controls
-
+### Ablations / controls
 E_SP_UNet
-
 FG_SP_UNet
-
 SP_UNet
-
 PlainCore_UNet
 
-Seeds
+### Seeds
 
 Configured seeds:
-
+```python
 SEEDS = [42, 123, 999]
-Installation
-Option A (pip)
+```
+### Installation
+### Option A (pip)
 pip install -r requirements.txt
-Option B (conda example)
+
+### Option B (conda example)
 conda create -n spffunet python=3.10 -y
 conda activate spffunet
 pip install -r requirements.txt
@@ -101,44 +95,34 @@ pip install -r requirements.txt
 Tip: You can generate requirements.txt from your working environment using:
 
 pip freeze > requirements.txt
-Running training and evaluation
-1) Select a model variant
+### Running training and evaluation
+### 1) Select a model variant
 
 Your config supports selecting a variant via environment variable:
-
 export INNOVATIVE3D_VARIANT="SPFF-UNet"
 
 To run a baseline, for example:
 
 export INNOVATIVE3D_VARIANT="ResUNet++"
-2) Train
+### 2) Train
 python train.py
-3) Evaluate / Test
+### 3) Evaluate / Test
 python test.py
-Reproducibility notes
 
+### Reproducibility notes
 The manuscript reports results as mean ± SD across three seeds with a unified protocol:
-
 same preprocessing and augmentations (including grid-puzzle)
-
 early stopping on validation macro Dice
-
 held-out scan for external testing (scan-level split)
-
 Ensure your BASE_DIR and dataset folder names match the dataset structure you downloaded from IEEE DataPort.
 
-Baseline attribution
-
+### Baseline attribution
 This repository includes independent implementations inspired by the cited papers (e.g., 3D U-Net, ResUNet++, R2U-Net, UNETR, Swin UNETR) used as baselines in our comparison. These implementations were written by the authors of this repository for research reproducibility. Please cite the original papers when using these architectures.
 
-Citation
-
+### Citation
 If you use this code or dataset, please cite:
-
 the associated manuscript (PLOS ONE submission / accepted paper), and
-
 the dataset DOI: 10.21227/gbhn-nk95
 
-License
-
+### License
 See the LICENSE file in this repository.
