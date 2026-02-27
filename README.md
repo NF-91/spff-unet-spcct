@@ -7,7 +7,7 @@ The SPCCT phantom dataset used in this project is publicly available via IEEE Da
 
 - **DOI:** 10.21227/gbhn-nk95
 
-> Note: The dataset files are **not** included in this GitHub repository.
+> **Note:** The dataset files are **not** included in this GitHub repository.
 
 ---
 
@@ -24,47 +24,31 @@ Key settings are defined in:
 - `innovative3D/config.py`
 
 ### 1) Dataset path
-By default, the code expects the dataset under:
+By default, the code expects the dataset under (WSL/Linux example used by the authors):
 
 ```python
 BASE_DIR = Path("/home/nadine/datasets/Fivedatasets")
-You must update BASE_DIR to match your machine, for example:
+```
+Expected dataset subfolders:
+Fivedatasets/
+  firstscan/
+  filtered/
+  filtered2/
+  filtered3/
+  filtered4/
 
-Linux/WSL example:
-
-/home/<user>/datasets/Fivedatasets
-
-Windows-mounted path under WSL:
-
-/mnt/c/Users/<user>/...
-
-The dataset subfolders are expected as:
-
-DATA_DIRS = {
-  "set1": BASE_DIR / "firstscan",
-  "set2": BASE_DIR / "filtered",
-  "set3": BASE_DIR / "filtered2",
-  "set4": BASE_DIR / "filtered3",
-  "set5": BASE_DIR / "filtered4",
-}
 2) Train/test split (scan-level)
 
 The default split is scan-level (to avoid leakage across correlated slices):
-
 TRAIN_INDICES = [0, 1, 2, 4]
-
-TEST_INDICES = [3]
+TEST_INDICES  = [3]
 
 3) Checkpoints and logs
-
 The default checkpoint root is:
-
 _PRIMARY_CKPT_DIR = BASE_DIR / "final checkpoints" / "trial"
 
 You can override checkpoint and log locations using environment variables:
-
 CHECKPOINT_DIR (where checkpoints are saved)
-
 LOG_DIR (where logs are written; defaults to runs/ under the project)
 
 Example:
@@ -107,9 +91,6 @@ Configured seeds:
 
 SEEDS = [42, 123, 999]
 Installation
-
-Create an environment and install dependencies.
-
 Option A (pip)
 pip install -r requirements.txt
 Option B (conda example)
@@ -134,10 +115,6 @@ export INNOVATIVE3D_VARIANT="ResUNet++"
 python train.py
 3) Evaluate / Test
 python test.py
-
-If your scripts accept command-line flags for model/seed/path, prefer those.
-Otherwise, the variant selection is controlled by INNOVATIVE3D_VARIANT and the training loop uses SEEDS from config.py.
-
 Reproducibility notes
 
 The manuscript reports results as mean ± SD across three seeds with a unified protocol:
@@ -148,7 +125,7 @@ early stopping on validation macro Dice
 
 held-out scan for external testing (scan-level split)
 
-Ensure your BASE_DIR and DATA_DIRS match the dataset structure you downloaded from IEEE DataPort.
+Ensure your BASE_DIR and dataset folder names match the dataset structure you downloaded from IEEE DataPort.
 
 Baseline attribution
 
@@ -165,8 +142,3 @@ the dataset DOI: 10.21227/gbhn-nk95
 License
 
 See the LICENSE file in this repository.
-
-### How to write it quickly (since you’re using terminal)
-If you’re at the `>` prompt from `cat > README.md << 'EOF'`, paste the README above, then finish with:
-
-```bash
