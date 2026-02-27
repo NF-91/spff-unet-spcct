@@ -90,31 +90,47 @@ Configured seeds:
 SEEDS = [42, 123, 999]
 ```
 ### Installation
+
 ### Option A (pip)
+```bash
 pip install -r requirements.txt
+```
 
 ### Option B (conda example)
+```bash
 conda create -n spffunet python=3.10 -y
 conda activate spffunet
 pip install -r requirements.txt
+```
 
 Tip: You can generate requirements.txt from your working environment using:
 
+```bash
 pip freeze > requirements.txt
+```
+
+```code 
 ### Running training and evaluation
 ### 1) Select a model variant
 
 Your config supports selecting a variant via environment variable:
 export INNOVATIVE3D_VARIANT="SPFF-UNet"
+```
 
 To run a baseline, for example:
 
+```bash
 export INNOVATIVE3D_VARIANT="ResUNet++"
+```
 ### 2) Train
+```bash 
 python train.py
-### 3) Evaluate / Test
-python test.py
 
+```
+### 3) Evaluate / Test
+```bash
+python test.py
+```
 ### Reproducibility notes
 The manuscript reports results as mean ± SD across three seeds with a unified protocol:
 same preprocessing and augmentations (including grid-puzzle)
